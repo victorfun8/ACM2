@@ -1,9 +1,12 @@
 package com.sort;
 
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
+
+import com.utils.CalcTimeUtil;
 
 /**
  * 
@@ -37,6 +40,17 @@ public class SimpleSectionSort {
 	
 	public static void main(String[] args) {
 		int[] nums = {-1,0,-5,-2,-2,-4,0,1,-2};
-		System.out.println("sort = " + new SimpleSectionSort().sort(nums));
+		SimpleSectionSort sort = new SimpleSectionSort();
+		Method m;
+		try {
+			m = SimpleSectionSort.class.getMethod("sort", int[].class);
+			CalcTimeUtil.calMethodInvokeTime(m, sort, nums);
+		} catch (NoSuchMethodException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SecurityException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }

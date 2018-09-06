@@ -1,9 +1,12 @@
 package com.sort;
 
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
+
+import com.utils.CalcTimeUtil;
 
 /**
  * 
@@ -72,9 +75,22 @@ public class DoubleSectionSort<E> {
 	
 	public static void main(String[] args) {
 		int[] nums = {-1,0,-5,-2,-2,-4,0,1,-2};
-		int[] temp = new DoubleSectionSort().sort(nums);
-		for (int i : temp) {
-			System.out.println("sort = " + i);
+		
+		DoubleSectionSort<int[]> sort = new DoubleSectionSort<int[]>();
+		try {
+			Method m = DoubleSectionSort.class.getMethod("sort", int[].class);
+			m.getReturnType();
+			CalcTimeUtil.calMethodInvokeTime(m, sort, nums);
+			int[] temp = new DoubleSectionSort().sort(nums);
+			for (int i : temp) {
+				System.out.println("sort = " + i);
+			}
+		} catch (NoSuchMethodException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SecurityException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
 }

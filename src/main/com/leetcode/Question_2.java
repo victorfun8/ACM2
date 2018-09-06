@@ -1,37 +1,37 @@
 package com.leetcode;
 
 public class Question_2 {
-	public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-		ListNode ln = new ListNode(0);
-		while (l1.next != null) {
-			int increase1 = (l1.val + l2.val) / 10;
-			ln.val = (l1.val + l2.val) % 10;
-			
-			if (l2.next != null) {
-				
-			} else {
-				ln.next = l1.next;
-			}
-		}
-		
-		return parseInt2ListNode(result);
-	}
-	
-	private ListNode addTwoNumbers(ListNode l1, ListNode l2, boolean increase1) {
-		ListNode ln = new ListNode(0);
-		while (l1.next != null) {
-			int increase1 = (l1.val + l2.val) / 10;
-			ln.val = (l1.val + l2.val) % 10;
-			
-			if (l2.next != null) {
-				
-			} else {
-				ln.next = l1.next;
-			}
-		}
-		
-		return parseInt2ListNode(result);
-	}
+//	public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+//		ListNode ln = new ListNode(0);
+//		while (l1.next != null) {
+//			int increase1 = (l1.val + l2.val) / 10;
+//			ln.val = (l1.val + l2.val) % 10;
+//
+//			if (l2.next != null) {
+//
+//			} else {
+//				ln.next = l1.next;
+//			}
+//		}
+//
+//		return parseInt2ListNode(result);
+//	}
+//
+//	private ListNode addTwoNumbers(ListNode l1, ListNode l2, boolean increase1) {
+//		ListNode ln = new ListNode(0);
+//		while (l1.next != null) {
+//			int increase1 = (l1.val + l2.val) / 10;
+//			ln.val = (l1.val + l2.val) % 10;
+//
+//			if (l2.next != null) {
+//
+//			} else {
+//				ln.next = l1.next;
+//			}
+//		}
+//
+//		return parseInt2ListNode(result);
+//	}
 
 	private ListNode parseInt2ListNode(int result) {
 		int temp = result / 10;
